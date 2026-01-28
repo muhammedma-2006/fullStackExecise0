@@ -1,7 +1,21 @@
-browser -> server: HTTP GET /spa
-server --> browser: HTML document
-browser -> server: GET main.css
-browser -> server: GET spa.js
-server --> browser: JavaScript application
-browser -> server: GET data.json
-server --> browser: JSON data
+```mermaid
+    sequenceDiagram
+        participant browser
+        participant server
+
+        browser->>server: GET /exampleapp/spa
+        activate server
+        server-->>browser: HTML document
+        deactivate server
+
+        browser->>server: GET /exampleapp/main.css
+        browser->>server: GET /exampleapp/spa.js
+
+        Note right of browser: JavaScript takes control of the UI
+
+        browser->>server: GET /exampleapp/data.json
+        activate server
+        server-->>browser: Notes JSON
+        deactivate server
+
+        Note right of browser: JS renders notes without page reload

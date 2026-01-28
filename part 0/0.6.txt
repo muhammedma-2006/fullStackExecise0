@@ -1,3 +1,16 @@
-browser -> server: HTTP POST /new_note_spa
-server --> browser: JSON response
-browser updates UI
+```mermaid
+    sequenceDiagram
+        participant browser
+        participant server
+
+        Note right of browser: User writes note and clicks "Save"
+
+        browser->>browser: JavaScript intercepts form submit
+        browser->>server: POST /exampleapp/new_note_spa (JSON)
+        activate server
+        server-->>browser: 201 Created
+        deactivate server
+
+        Note right of browser: JS updates local state
+
+        browser->>browser: DOM re-rendered with new note
