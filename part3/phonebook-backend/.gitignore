@@ -22,7 +22,6 @@ pids
 coverage/
 
 # build output (if you add later)
-dist/
 build/
 
 # OS junk
