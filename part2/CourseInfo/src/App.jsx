@@ -6,7 +6,7 @@ const App = () => {
   id: 1,
   parts  : [{
     name : 'Fundamentals of React',
-    exercises: 10,
+    exercises: 101,
     id: 1
   },
   {
